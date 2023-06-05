@@ -33,17 +33,17 @@ class MyClient(discord.Client):
             
     @tasks.loop(time = time)
     async def auto_yee(self):
-        channel = await client.fetch_channel('')
+        channel = await client.fetch_channel('1087365546380628069')
         await channel.send('yee!')
 
     @tasks.loop(time = time)
     async def auto_quoter(self):
         index = randint(0, 9)
-        channel = await client.fetch_channel('')
+        channel = await client.fetch_channel('716932421496602675')
         await channel.send(quote_list[index])
 
         
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents = intents)
-client.run('')
+client.run('MTA4NzExNDE5MjAzNDc0MjM5Mw.GU7HY5.EZoHXWzDUc-ZxItQFXFmpPmREwRVu4B4paTiGI')
