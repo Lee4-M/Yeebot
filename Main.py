@@ -1,6 +1,5 @@
 import discord
-import datetime
-from discord.ext import tasks, commands
+from discord.ext import tasks
 
 
 class MyClient(discord.Client):
@@ -12,16 +11,15 @@ class MyClient(discord.Client):
     async def on_message(self, message):
         if message.author == self.user:
             return
-        if (message.content == 'yee') or (message.content =='Yee'):
-            await message.channel.send('yee')
+        if "yee" in message.content:
+            await message.channel.send('yee <:uhh:1038524509646503946>')
             
-
-    @tasks.loop(hours=8.0)
+    @tasks.loop(hours=1.0)
     async def auto_yee(self):
-        channel = await client.fetch_channel('channel')
+        channel = await client.fetch_channel('1087365546380628069')
         await channel.send('yee!')
 
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents = intents)
-client.run('TOKEN')
+client.run('#')
